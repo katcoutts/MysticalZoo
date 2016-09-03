@@ -50,4 +50,12 @@ public abstract class MysticalCreature {
     this.age = age;
   }
 
+  public void setValue(int value){
+    this.value = value;
+  }
+
+  public void setLifeExpectancy(int life_expectancy){
+    this.life_expectancy = life_expectancy;
+  }
+
 }

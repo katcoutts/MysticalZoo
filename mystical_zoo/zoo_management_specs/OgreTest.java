@@ -28,28 +28,40 @@ public class OgreTest {
   }
 
   @Test
-  public void getValue(){
+  public void canGetValue(){
     assertEquals(3000, ogre.getValue());
   }
 
   @Test
-  public void getGender(){
+  public void canGetGender(){
     assertEquals(GenderType.MALE, ogre.getGender());
   }
 
   @Test
-  public void getHabitat(){
+  public void canGetHabitat(){
     assertEquals(HabitatType.LAND, ogre.getHabitat());
   }
 
   @Test
-  public void getAge(){
+  public void canGetAge(){
     assertEquals(26, ogre.getAge());
   }
 
   @Test
-  public void getLifeExpectancy(){
+  public void canGetLifeExpectancy(){
     assertEquals(80, ogre.getLifeExpectancy());
+  }
+
+  @Test
+  public void canSetLifeExpectancy(){
+    ogre.setLifeExpectancy(60);
+    assertEquals(60, ogre.getLifeExpectancy());
+  }
+
+  @Test 
+  public void canSetValue(){
+    ogre.setValue(2000);
+    assertEquals(2000, ogre.getValue());
   }
 
 }
