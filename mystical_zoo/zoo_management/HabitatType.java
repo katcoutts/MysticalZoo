@@ -6,6 +6,7 @@ public enum HabitatType {
   LAND_SEA,
   LAND_FRESHWATER,
   FRESHWATER,
-  LAND_AIR
+  LAND_AIR,
+  LAND
 
 }

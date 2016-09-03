@@ -9,7 +9,7 @@ public abstract class MysticalCreature {
   HabitatType habitat;
   int age;
   int life_expectancy;
-  
+
 
   public MysticalCreature(String name, int value, GenderType gender, HabitatType habitat, int life_expectancy, int age){
     this.name = name;
@@ -29,7 +29,7 @@ public abstract class MysticalCreature {
   }
 
   public int getLifeExpectancy(){
-    return this.life_expectancy
+    return this.life_expectancy;
   }
 
   public GenderType getGender(){
@@ -44,10 +44,10 @@ public abstract class MysticalCreature {
     return this.age;
   }
 
-  public int getLifeExpectancy(){
-    return this.life_expectancy;
-  }
+  public abstract String eat();
 
-  public String eat();
+  public void setAge(int age){
+    this.age = age;
+  }
 
 }

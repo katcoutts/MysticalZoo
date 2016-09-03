@@ -1,7 +1,9 @@
-package mystical_zoo;
+package zoo_management;
 
 public class SeaEnclosure extends Enclosure {
 
-  public SeaEnsclosure(int capacity,)
+  public SeaEnclosure(int capacity, HabitatType habitat){
+    super(capacity, habitat);
+  }
 
 }

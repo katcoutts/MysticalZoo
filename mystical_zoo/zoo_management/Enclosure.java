@@ -1,4 +1,4 @@
-package mystical_zoo;
+package zoo_management;
 
 public abstract class Enclosure {
 
