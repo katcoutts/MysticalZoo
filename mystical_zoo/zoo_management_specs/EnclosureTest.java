@@ -36,6 +36,14 @@ public class EnclosureTest{
     assertEquals(19, seaEnclosure.getSpace());
   }
 
+  @Test
+  public void canRemoveAnOccupant(){
+    seaEnclosure.addOccupant(kraken);
+    seaEnclosure.removeOccupant(kraken);
+    assertEquals(0, seaEnclosure.getCount());
+    assertEquals(20, seaEnclosure.getSpace());
+  }
+
   // @Test
   // public void canGetAvailableSpace(){
   //   seaEnclosure.addOccupant(kraken);

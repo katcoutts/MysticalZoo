@@ -25,6 +25,10 @@ public class TicketOffice {
     return this.takings;
   }
 
+  public void setTakings(int newTakings){
+    this.takings = newTakings;
+  }
+
   public int getTicketPrice(){
     return this.ticketPrice;
   }

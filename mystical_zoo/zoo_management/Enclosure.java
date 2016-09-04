@@ -52,6 +52,11 @@ public class Enclosure {
     this.space -= 1;
   }
 
+  public void removeOccupant(MysticalCreature mysticalCreature){
+    occupants.remove(mysticalCreature);
+    this.space += 1;
+  }
+
   
 
 }
