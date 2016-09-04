@@ -10,8 +10,8 @@ public class EnclosureTest{
   
   @Before 
   public void before(){
-    seaEnclosure = new Enclosure(20, HabitatType.SEA);
-    seaEnclosure2 = new Enclosure(1, HabitatType.SEA);
+    seaEnclosure = new Enclosure(20, HabitatType.SEA, 20);
+    seaEnclosure2 = new Enclosure(1, HabitatType.SEA, 1);
   }
 
   @Test
@@ -33,13 +33,14 @@ public class EnclosureTest{
   public void canAddAnOccupant(){
     seaEnclosure.addOccupant(kraken);
     assertEquals(1, seaEnclosure.getCount());
+    assertEquals(19, seaEnclosure.getSpace());
   }
 
-  @Test
-  public void canGetAvailableSpace(){
-    seaEnclosure.addOccupant(kraken);
-    assertEquals(19, seaEnclosure.getAvailableSpace());
-  }
+  // @Test
+  // public void canGetAvailableSpace(){
+  //   seaEnclosure.addOccupant(kraken);
+  //   assertEquals(19, seaEnclosure.getAvailableSpace());
+  // }
 
   @Test
   public void canReturnFalseIfNoSpace(){

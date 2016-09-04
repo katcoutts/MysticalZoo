@@ -13,8 +13,8 @@ public class CreatureManagementUnitTest {
   public void before(){
     cmu = new CreatureManagementUnit();
     kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26);
-    enclosure = new Enclosure(20, HabitatType.SEA);
-    enclosure2 = new Enclosure(42, HabitatType.SEA);
+    enclosure = new Enclosure(20, HabitatType.SEA, 20);
+    enclosure2 = new Enclosure(42, HabitatType.SEA, 42);
   }
 
   @Test
@@ -36,6 +36,15 @@ public class CreatureManagementUnitTest {
     cmu.addEnclosure(enclosure2);
     enclosure2.addOccupant(kraken);
     assertEquals(61, cmu.getTotalAvailableSpace());
+  }
+
+  @Test
+  public void canSortEnclosuresBasedOnSpace(){
+    cmu.addEnclosure(enclosure2);
+    cmu.addEnclosure(enclosure);
+    assertEquals(42, cmu.getEnclosure(0).getSpace());
+    cmu.sortEnclosuresByAvailableSpace();
+    assertEquals(20, cmu.getEnclosure(0).getSpace());
   }
 
   @Test

@@ -1,19 +1,19 @@
-package zoo_management;
+// package zoo_management;
 
-public class Ticket{
+// public class Ticket{
 
-  private int price;
+//   private int price;
 
-  public Ticket(int price){
-    this.price = price;
-  } 
+//   public Ticket(int price){
+//     this.price = price;
+//   } 
 
-  public int getPrice(){
-    return this.price;
-  }
+//   public int getPrice(){
+//     return this.price;
+//   }
 
-  public void setPrice(int newPrice){
-    this.price = newPrice;
-  }
+//   public void setPrice(int newPrice){
+//     this.price = newPrice;
+//   }
 
-}
+// }
