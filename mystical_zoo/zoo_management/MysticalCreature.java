@@ -3,11 +3,13 @@ import behaviours.*;
 
 public abstract class MysticalCreature {
 
-  String name;
-  int value;
-  GenderType gender;
-  HabitatType habitat;
-  int age;
+  private String name;
+  private int value;
+  private GenderType gender;
+  private HabitatType habitat;
+  private int age;
+
+  // need to think about the food aspect and bellies. If what they eat varies maybe the belly shouldn't be defined here.
 
 // deleted int life_expectancy from just before int age below
   public MysticalCreature(String name, int value, GenderType gender, HabitatType habitat, int age){
