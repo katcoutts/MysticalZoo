@@ -32,7 +32,7 @@ public class TicketOfficeTest {
   @Test
   public void canSellATicket(){
     ticketOffice.addTicket(ticket);
-    ticketOffice.sellTicket(ticket);
+    ticketOffice.sellTicket();
     assertEquals(0, ticketOffice.countTickets());
     assertEquals(200, ticketOffice.getTakings());
   }
@@ -41,7 +41,7 @@ public class TicketOfficeTest {
   public void canSetDaysTicketTotal(){
     ticketOffice.setDaysTicketTotal(200, ticket);
     assertEquals(200, ticketOffice.countTickets());
-    ticketOffice.sellTicket(ticket);
+    ticketOffice.sellTicket();
     assertEquals(199, ticketOffice.countTickets());
     assertEquals(200, ticketOffice.getTakings());
   }

@@ -27,10 +27,17 @@ public class TicketOffice {
     return tickets.size();
   }
 
-  public void sellTicket(Ticket ticket){
-    tickets.remove(0);
+  public Ticket sellTicket(){
+    if (countTickets() >= 1){
+    Ticket ticket = tickets.remove(0);
     takings += ticket.getPrice();
+    return ticket;
+    }
+    else{
+      return null;
+    }
   }
+
 
   public void setDaysTicketTotal(int total, Ticket ticket){
     for (int i=1; i<=(total); i++){

@@ -31,6 +31,12 @@ public class SeaEnclosureTest{
   }
 
   @Test
+  public void canGetAvailableSpace(){
+    seaEnclosure.addOccupant(kraken);
+    assertEquals(19, seaEnclosure.getAvailableSpace());
+  }
+
+  @Test
   public void canReturnFalseIfNoSpace(){
     seaEnclosure2.addOccupant(kraken);
     assertEquals(1, seaEnclosure2.getCount());

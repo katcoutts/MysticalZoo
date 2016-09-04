@@ -22,6 +22,11 @@ public abstract class Enclosure {
     return occupants.size();
   }
 
+  public int getAvailableSpace(){
+    int space = (getCapacity() - getCount());
+    return space;
+  }
+
   public boolean checkIfSpace(){
     if (getCount() >= getCapacity()){
       return false;
