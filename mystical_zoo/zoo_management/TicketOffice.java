@@ -1,23 +1,52 @@
-// package zoo_management;
+package zoo_management;
+import java.util.*;
 
-// public class TicketOffice {
+public class TicketOffice {
 
-//   private Integer till;
-//   private ArrayList<Ticket> tickets;
+  private int takings;
+  private ArrayList<Ticket> tickets;
 
-//   public TicketOffice(Integer till, ArrayList<Ticket> tickets){
-//     this.till = till;
-//     this.tickets = tickets;
-//   }
+  public TicketOffice(int takings){
+    this.takings = takings;
+    this.tickets = new ArrayList<Ticket>();
+  }
 
+  public int getTakings(){
+    return this.takings;
+  }
 
+  public ArrayList<Ticket> getTickets(){
+    return this.tickets;
+  }
+
+  public void addTicket(Ticket ticket){
+    tickets.add(ticket);
+  }
+
+  public int countTickets(){
+    return tickets.size();
+  }
+
+  public void sellTicket(Ticket ticket){
+    tickets.remove(0);
+    takings += ticket.getPrice();
+  }
+
+  public void setDaysTicketTotal(int total, Ticket ticket){
+    for (int i=1; i<=(total); i++){
+      tickets.add(ticket);
+    }
+  }
+
+  // create method with a for loop to add the number of tickets for the day = you can maybe pass in the number so it's flexible.
 
 
   // need to create tickets 
   // ticket office contains an array of tickets. Maybe need a method which starts it up each day, putting in whatever we decide the maximum number of tickets is. 
   // extension could be to think about different types of tickets - kids, students, over-60 etc.
   // ticket office needs a till which keeps track of money.
+  // refer to bear and salmon/human example with different nutrition counts.
 
 
 
-// }
+}
