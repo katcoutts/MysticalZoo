@@ -1,0 +1,35 @@
+##Fantasy Zoo Manager
+
+Goal: Practice OO modelling  in Java (unit tests, no UI)
+
+You have been asked to create a zoo management app so that we can manage our dragons, unicorns and other mystical beings. The user must be able to add enclosures, add / remove animals, feed animals and anything else you can dream up!
+
+###Additionally:
+ 
+* Animals cannot be placed in the same enclosure if they would eat one and other. 
+* Animal babies can be sold(!) to other zoos :/
+* Visitors can enter / exit the zoo if there are tickets left. 
+* View the total income for the zoo.
+* Animals can randomly go on a rampage and break out of their enclosures
+
+
+
+
+Feeding:
+perhaps have a zookeeper for each enclosure who can feed the animals.
+Need to have a belly for animals.
+Or have a diary which keeps track of when animals are fed??
+Zookeeper should have a diary that keeps track of stuff in their enclosure.
+
+Predators:
+Do we give each creature a list of its predators. Or each creature a list of its prey?
+Maybe prey and then if two animals don't have any prey they'll be fine together???
+
+Tickets:
+Do we actually need tickets or just a capacity?
+Ticket office needs to keep track of tickets sold for income.
+Also needs to keep track of how many visitors are in the zoo.
+
+Adding to an enclosure:
+The CMU should work out which enclosure to put it in (refer back to karaoke homework for idea) and the relevant enclosure should then add the creature to it?
+

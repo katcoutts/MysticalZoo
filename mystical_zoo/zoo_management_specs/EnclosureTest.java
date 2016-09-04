@@ -2,21 +2,26 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import zoo_management.*;
 
-public class SeaEnclosureTest{
+public class EnclosureTest{
 
-  SeaEnclosure seaEnclosure;
+  Enclosure seaEnclosure;
   Kraken kraken;
-  SeaEnclosure seaEnclosure2;
+  Enclosure seaEnclosure2;
   
   @Before 
   public void before(){
-    seaEnclosure = new SeaEnclosure(20, HabitatType.SEA);
-    seaEnclosure2 = new SeaEnclosure(1, HabitatType.SEA);
+    seaEnclosure = new Enclosure(20, HabitatType.SEA);
+    seaEnclosure2 = new Enclosure(1, HabitatType.SEA);
   }
 
   @Test
   public void canGetCapacity(){
     assertEquals(20, seaEnclosure.getCapacity());
+  }
+
+  @Test
+  public void canGetHabitatType(){
+    assertEquals(HabitatType.SEA, seaEnclosure.getHabitatType());
   }
 
   @Test

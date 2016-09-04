@@ -1,7 +1,7 @@
 package zoo_management;
 import java.util.*;
 
-public abstract class Enclosure {
+public class Enclosure {
 
   private int capacity;
   private HabitatType habitat;
@@ -20,6 +20,10 @@ public abstract class Enclosure {
 
   public int getCount(){
     return occupants.size();
+  }
+
+  public HabitatType getHabitatType(){
+    return this.habitat;
   }
 
   public int getAvailableSpace(){

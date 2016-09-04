@@ -13,8 +13,8 @@ public class CreatureManagementUnitTest {
   public void before(){
     cmu = new CreatureManagementUnit();
     kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26);
-    enclosure = new SeaEnclosure(20, HabitatType.SEA);
-    enclosure2 = new SeaEnclosure(42, HabitatType.SEA);
+    enclosure = new Enclosure(20, HabitatType.SEA);
+    enclosure2 = new Enclosure(42, HabitatType.SEA);
   }
 
   @Test
