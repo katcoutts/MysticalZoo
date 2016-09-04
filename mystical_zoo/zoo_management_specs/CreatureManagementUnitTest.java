@@ -30,5 +30,22 @@ public class CreatureManagementUnitTest {
     assertEquals(62, cmu.getTotalCapacity());
   }
 
+  @Test
+  public void canGetTotalAvailableSpaceInAllEnclosures(){
+    cmu.addEnclosure(enclosure);
+    cmu.addEnclosure(enclosure2);
+    enclosure2.addOccupant(kraken);
+    assertEquals(61, cmu.getTotalAvailableSpace());
+  }
+
+  @Test
+  public void canGetTotalNoOfCreatures(){
+    cmu.addEnclosure(enclosure);
+    cmu.addEnclosure(enclosure2);
+    enclosure2.addOccupant(kraken);
+    enclosure.addOccupant(kraken);
+    assertEquals(2, cmu.getTotalCreatures());
+  }
+
 
 }

@@ -35,5 +35,21 @@ public class CreatureManagementUnit {
     return capacity;
   }
 
+  public int getTotalAvailableSpace(){
+    int space = 0;
+    for (Enclosure enclosure : enclosures){
+      space += enclosure.getAvailableSpace();
+    }
+    return space;
+  }  
+
+  public int getTotalCreatures(){
+    int total = 0;
+    for (Enclosure enclosure : enclosures){
+      total += enclosure.getCount();
+    }
+    return total;
+  }
+
 
 } 
