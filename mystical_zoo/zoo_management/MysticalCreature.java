@@ -8,15 +8,13 @@ public abstract class MysticalCreature {
   GenderType gender;
   HabitatType habitat;
   int age;
-  int life_expectancy;
 
-
-  public MysticalCreature(String name, int value, GenderType gender, HabitatType habitat, int life_expectancy, int age){
+// deleted int life_expectancy from just before int age below
+  public MysticalCreature(String name, int value, GenderType gender, HabitatType habitat, int age){
     this.name = name;
     this.value = value;
     this.gender = gender;
     this.habitat = habitat;
-    this.life_expectancy = life_expectancy;
     this.age = age;
   }
 
@@ -28,9 +26,6 @@ public abstract class MysticalCreature {
     return this.value;
   }
 
-  public int getLifeExpectancy(){
-    return this.life_expectancy;
-  }
 
   public GenderType getGender(){
     return this.gender;
@@ -54,8 +49,5 @@ public abstract class MysticalCreature {
     this.value = value;
   }
 
-  public void setLifeExpectancy(int life_expectancy){
-    this.life_expectancy = life_expectancy;
-  }
 
 }
