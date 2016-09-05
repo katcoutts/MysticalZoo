@@ -1,11 +1,13 @@
 package zoo_management;
 import java.util.*;
+import behaviours.*;
 
 public class Enclosure {
 
   private int capacity;
   private HabitatType habitat;
   private ArrayList<MysticalCreature> occupants;
+  private ArrayList<Edible> trough;
 
 
 
@@ -14,6 +16,7 @@ public class Enclosure {
     this.capacity = capacity;
     this.habitat = habitat;
     this.occupants = new ArrayList<MysticalCreature>();
+    this.trough = new ArrayList<Edible>();
     // MAYBE CHANGE THE ABOVE SO DIFFERENT TYPES OF ENCLOSURES CAN TAKE DIFFERENT TYPES OF ANIMALS BASED ON INTERFACE SO YOU CAN'T PUT A LAND ANIMAL IN A SEA ENCLOSURE.
   }
 
@@ -27,6 +30,20 @@ public class Enclosure {
 
   public int getCount(){
     return occupants.size();
+  }
+
+  public ArrayList<Edible> getTrough(){
+    return this.trough;
+  }
+
+  public int countFoodInTrough(){
+    return trough.size();  
+  }
+
+
+
+  public void addFoodToTrough(Edible item){
+    trough.add(item);
   }
 
   public HabitatType getHabitatType(){
@@ -69,6 +86,8 @@ public class Enclosure {
     MysticalCreature creature = occupants.remove(index);
     return creature;
   }
+
+
 
   
 

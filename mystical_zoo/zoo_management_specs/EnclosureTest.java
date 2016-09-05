@@ -7,11 +7,13 @@ public class EnclosureTest{
   Enclosure seaEnclosure;
   Kraken kraken;
   Enclosure seaEnclosure2;
+  Chicken chicken;
   
   @Before 
   public void before(){
     seaEnclosure = new Enclosure(20, HabitatType.SEA);
     seaEnclosure2 = new Enclosure(1, HabitatType.SEA);
+    chicken = new Chicken();
   }
 
   @Test
@@ -22,6 +24,17 @@ public class EnclosureTest{
   @Test
   public void canGetHabitatType(){
     assertEquals(HabitatType.SEA, seaEnclosure.getHabitatType());
+  }
+
+  @Test
+  public void troughStartsEmpty(){
+    assertEquals(0, seaEnclosure.countFoodInTrough());
+  }
+
+  @Test
+  public void canAddFoodToTrough(){
+    seaEnclosure.addFoodToTrough(chicken);
+    assertEquals(1, seaEnclosure.countFoodInTrough());
   }
 
   @Test
