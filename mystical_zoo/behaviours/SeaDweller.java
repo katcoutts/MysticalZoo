@@ -1,5 +1,5 @@
 package behaviours;
 
-public interface Swimmable {
+public interface SeaDweller {
   String swim();
 }

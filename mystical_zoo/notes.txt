@@ -20,6 +20,8 @@ perhaps have a zookeeper for each enclosure who can feed the animals.
 Need to have a belly for animals.
 Or have a diary which keeps track of when animals are fed??
 Zookeeper should have a diary that keeps track of stuff in their enclosure.
+Do we need to give each class of animal a list of food it eats?
+
 
 Predators:
 Do we give each creature a list of its predators. Or each creature a list of its prey?

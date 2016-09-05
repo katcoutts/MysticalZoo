@@ -13,8 +13,8 @@ public class CreatureManagementUnitTest {
   public void before(){
     cmu = new CreatureManagementUnit();
     kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26);
-    enclosure = new Enclosure(20, HabitatType.SEA, 20);
-    enclosure2 = new Enclosure(42, HabitatType.SEA, 42);
+    enclosure = new Enclosure(20, HabitatType.SEA);
+    enclosure2 = new Enclosure(42, HabitatType.SEA);
   }
 
   @Test
@@ -54,6 +54,25 @@ public class CreatureManagementUnitTest {
     enclosure2.addOccupant(kraken);
     enclosure.addOccupant(kraken);
     assertEquals(2, cmu.getTotalCreatures());
+  }
+
+  @Test
+  public void canFindMysticalCreature(){
+    cmu.addEnclosure(enclosure);
+    cmu.addEnclosure(enclosure2);
+    enclosure2.addOccupant(kraken);
+    assertEquals(enclosure2, cmu.findMysticalCreature(kraken));
+  }
+
+  @Test
+  public void canMoveMysticalCreature(){
+    cmu.addEnclosure(enclosure);
+    cmu.addEnclosure(enclosure2);
+    enclosure2.addOccupant(kraken);
+    assertEquals(1, enclosure2.getCount());
+    cmu.moveMysticalCreature(kraken, enclosure);
+    assertEquals(1, enclosure.getCount());
+    assertEquals(0, enclosure2.getCount());
   }
 
 

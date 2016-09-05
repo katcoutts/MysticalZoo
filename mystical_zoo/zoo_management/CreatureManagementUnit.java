@@ -1,5 +1,6 @@
 package zoo_management;
 import java.util.*;
+import behaviours.*;
 
 public class CreatureManagementUnit {
 
@@ -8,16 +9,12 @@ public class CreatureManagementUnit {
 
 
   private ArrayList<Enclosure> enclosures;
-  private Integer stockCount;
+
 
   public CreatureManagementUnit(){
-    this.stockCount = 0;
     this.enclosures = new ArrayList<Enclosure>();
   }
 
-  public Integer getStockCount(){
-    return this.stockCount;
-  }
 
   public int countEnclosures(){
     return enclosures.size();
@@ -62,6 +59,23 @@ public class CreatureManagementUnit {
     }
     return total;
   }
+
+  public Enclosure findMysticalCreature(MysticalCreature mysticalCreature){
+    for (Enclosure enclosure : enclosures){
+      if(enclosure.checkForOccupant(mysticalCreature) == true){
+        return enclosure;
+      }
+    }
+    return null;
+  }
+
+  public void moveMysticalCreature(MysticalCreature mysticalCreature, Enclosure enclosure){
+    Enclosure currentEnclosure = findMysticalCreature(mysticalCreature);
+    currentEnclosure.removeOccupant(mysticalCreature);
+    enclosure.addOccupant(mysticalCreature);
+  }
+
+
 
 
 } 

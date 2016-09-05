@@ -6,15 +6,15 @@ public class Enclosure {
   private int capacity;
   private HabitatType habitat;
   private ArrayList<MysticalCreature> occupants;
-  private int space;
 
 
-  public Enclosure (int capacity, HabitatType habitat, int space){
+
+  public Enclosure (int capacity, HabitatType habitat){
     // PROBABLY HERE DON'T NEED TO PASS IN THE SPACE AS THAT'S THE CAPACITY TO START WITH SO JUST SAY THIS.SPACE = CAPACITY.
     this.capacity = capacity;
     this.habitat = habitat;
-    this.space = space;
     this.occupants = new ArrayList<MysticalCreature>();
+    // MAYBE CHANGE THE ABOVE SO DIFFERENT TYPES OF ENCLOSURES CAN TAKE DIFFERENT TYPES OF ANIMALS BASED ON INTERFACE SO YOU CAN'T PUT A LAND ANIMAL IN A SEA ENCLOSURE.
   }
 
   public int getCapacity(){
@@ -22,7 +22,7 @@ public class Enclosure {
   }
 
   public int getSpace(){
-    return this.space;
+    return (getCapacity() - getCount());
   }
 
   public int getCount(){
@@ -31,6 +31,19 @@ public class Enclosure {
 
   public HabitatType getHabitatType(){
     return this.habitat;
+  }
+
+  public ArrayList<MysticalCreature> getOccupants(){
+    return this.occupants;
+  }
+
+  public boolean checkForOccupant(MysticalCreature creature){
+    for (MysticalCreature mysticalCreature : occupants){
+      if (mysticalCreature == creature){
+        return true;
+      }
+    }
+    return false;
   }
 
   // public int getAvailableSpace(){
@@ -49,12 +62,12 @@ public class Enclosure {
 
   public void addOccupant(MysticalCreature mysticalCreature){
     occupants.add(mysticalCreature);
-    this.space -= 1;
   }
 
-  public void removeOccupant(MysticalCreature mysticalCreature){
-    occupants.remove(mysticalCreature);
-    this.space += 1;
+  public MysticalCreature removeOccupant(MysticalCreature mysticalCreature){
+    int index = occupants.indexOf(mysticalCreature);
+    MysticalCreature creature = occupants.remove(index);
+    return creature;
   }
 
   
