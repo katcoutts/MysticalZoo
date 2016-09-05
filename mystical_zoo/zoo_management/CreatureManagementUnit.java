@@ -36,6 +36,36 @@ public class CreatureManagementUnit {
     Collections.sort(enclosures, (e1, e2) -> e1.getSpace() - e2.getSpace());
   }
 
+  // public Enclosure selectMostAppropriateEnclosureForNewCreature(){
+  //   ArrayListsortEnclosuresByAvailableSpace();
+  // }
+
+
+  public ArrayList<Enclosure> getEnclosuresOfParticularHabitatType(HabitatType habitat){
+    sortEnclosuresByAvailableSpace();
+    ArrayList<Enclosure> rightEnclosures = new ArrayList<Enclosure>();
+    for (Enclosure enclosure : enclosures){
+      if (enclosure.getHabitatType() == habitat){
+        rightEnclosures.add(enclosure);
+      }
+    } 
+    return rightEnclosures;
+  }
+
+  public Enclosure pickEnclosureForCreature(MysticalCreature creature){
+    HabitatType habitat = creature.getHabitat();
+    ArrayList<Enclosure> potentialEnclosures = getEnclosuresOfParticularHabitatType(habitat);
+    for (Enclosure enclosure : potentialEnclosures){
+      if (enclosure.getSpace() >= 1) 
+        return enclosure;
+      }
+    return null;
+  }
+
+
+
+
+
   public int getTotalCapacity(){
     int capacity = 0;
     for(Enclosure enclosure : enclosures){

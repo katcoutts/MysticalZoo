@@ -7,6 +7,7 @@ public class CreatureManagementUnitTest {
   CreatureManagementUnit cmu;
   Enclosure enclosure;
   Enclosure enclosure2;
+  Enclosure enclosure3;
   Kraken kraken;
 
   @Before
@@ -15,6 +16,7 @@ public class CreatureManagementUnitTest {
     kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26);
     enclosure = new Enclosure(20, HabitatType.SEA);
     enclosure2 = new Enclosure(42, HabitatType.SEA);
+    enclosure3 = new Enclosure(5, HabitatType.LAND);
   }
 
   @Test
@@ -73,6 +75,25 @@ public class CreatureManagementUnitTest {
     cmu.moveMysticalCreature(kraken, enclosure);
     assertEquals(1, enclosure.getCount());
     assertEquals(0, enclosure2.getCount());
+  }
+
+  @Test
+  public void canGetEnclosuresOfSpecificHabitat(){
+    cmu.addEnclosure(enclosure);
+    cmu.addEnclosure(enclosure2);
+    cmu.addEnclosure(enclosure3);
+    assertEquals(3, cmu.countEnclosures());
+    int number = cmu.getEnclosuresOfParticularHabitatType(HabitatType.SEA).size();
+    assertEquals(2, number);
+  }
+
+  @Test
+  public void canPickRightEnclosureForAnimal(){
+    cmu.addEnclosure(enclosure2);
+    cmu.addEnclosure(enclosure);
+    cmu.addEnclosure(enclosure3);
+    Enclosure enclosure = cmu.pickEnclosureForCreature(kraken);
+    assertEquals(20, enclosure.getCapacity());
   }
 
 
