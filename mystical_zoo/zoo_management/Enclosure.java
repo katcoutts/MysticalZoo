@@ -45,6 +45,10 @@ public class Enclosure {
     trough.add(item);
   }
 
+  public void removeFoodFromTrough(Edible item){
+    trough.remove(item);
+  }
+
   public HabitatType getHabitatType(){
     return this.habitat;
   }

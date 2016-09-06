@@ -1,5 +1,6 @@
 package zoo_management;
 import behaviours.*;
+import java.util.*;
 
 public abstract class MysticalCreature {
 
@@ -8,6 +9,7 @@ public abstract class MysticalCreature {
   private GenderType gender;
   private HabitatType habitat;
   private int age;
+  private ArrayList<Edible> belly;
 
   // need to think about the food aspect and bellies. If what they eat varies, maybe the belly shouldn't be defined here.
 
@@ -17,6 +19,7 @@ public abstract class MysticalCreature {
     this.gender = gender;
     this.habitat = habitat;
     this.age = age;
+    this.belly = new ArrayList<Edible>();
   }
 
   public String getName(){
@@ -27,6 +30,9 @@ public abstract class MysticalCreature {
     return this.value;
   }
 
+  public ArrayList<Edible> getBelly(){
+    return this.belly;
+  }
 
   public GenderType getGender(){
     return this.gender;
@@ -40,7 +46,13 @@ public abstract class MysticalCreature {
     return this.age;
   }
 
-  public abstract String eat();
+  public void eat(Edible food){
+    belly.add(food);
+  }
+
+  public void sleep(){
+    belly.clear();
+  }
 
   public void setAge(int age){
     this.age = age;

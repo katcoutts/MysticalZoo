@@ -34,10 +34,39 @@ public class ZooKeeper{
     feed.add(food);
   }
 
-  public void fillAllTroughs(Edible item){
+  // public void fillAllTroughs(Edible item){
+  //   ArrayList<Enclosure> enclosures = getEnclosures();
+  //   for (Enclosure enclosure : enclosures){
+  //     // get no of animals and then leave that many bits of food
+  //     int noOfAnimals = enclosure.getCount();
+  //     for (int i=0; i<noOfAnimals; i++){
+  //     enclosure.addFoodToTrough(item);
+  //     }
+  //   }
+  // }
+
+  // public void callAnimalsToEat(Edible item){
+  //   for (Enclosure enclosure : getEnclosures()){
+  //     for (MysticalCreature creature : enclosure.getOccupants()){
+  //       creature.eat(item);
+  //     }
+  //   }
+  // }
+
+  public void feedAnimals(Edible item){
     ArrayList<Enclosure> enclosures = getEnclosures();
-    for (Enclosure enclosure : enclosures){
-      enclosure.addFoodToTrough(item);
+    // for (Enclosure enclosure : enclosures){
+    //   
+    //   int noOfAnimals = enclosure.getCount();
+    //   for (int i=0; i<noOfAnimals; i++){
+    //   enclosure.addFoodToTrough(item);
+    //   }
+    // }
+    for (Enclosure enclosure : getEnclosures()){
+      for (MysticalCreature creature : enclosure.getOccupants()){
+        creature.eat(item);
+        enclosure.removeFoodFromTrough(item);
+      }
     }
   }
 

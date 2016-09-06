@@ -5,10 +5,12 @@ import zoo_management.*;
 public class KrakenTest {
 
   Kraken kraken;
+  Chicken chicken;
   
   @Before 
   public void before(){
     kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26);
+    chicken = new Chicken();
   }
 
   @Test
@@ -16,10 +18,10 @@ public class KrakenTest {
     assertEquals("Robbie", kraken.getName());
   }
 
-  @Test
-  public void canEat(){
-    assertEquals("Rrrraagh. I'll drag you down to the depths of the sea.", kraken.eat());
-  }
+  // @Test
+  // public void canEat(){
+  //   assertEquals("Rrrraagh. I'll drag you down to the depths of the sea.", kraken.eat(chicken));
+  // }
 
   @Test
   public void canSetAge(){
@@ -45,6 +47,12 @@ public class KrakenTest {
   @Test
   public void canGetAge(){
     assertEquals(26, kraken.getAge());
+  }
+
+  @Test
+  public void canGetFoodInBelly(){
+    kraken.eat(chicken);
+    assertEquals(1, kraken.getBelly().size());
   }
 
   // @Test

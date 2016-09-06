@@ -1,5 +1,6 @@
 package zoo_management;
 import behaviours.*;
+import java.util.*;
 
 public class Dragon extends MysticalCreature implements Rampageable{
 
@@ -7,9 +8,10 @@ public class Dragon extends MysticalCreature implements Rampageable{
     super(name, value, gender, habitat, age);
   }
 
-  public String eat(){
-    return "Breathe fire. Chomp, chomp.";
-  }
+  // public String eat(Edible food){
+  //   belly.add(food);
+  //   return "Breathe fire. Chomp, chomp.";
+  // }
 
   public String rampage(){
     return "Aaaargh. I'm rampaging. I'll burn you all.";

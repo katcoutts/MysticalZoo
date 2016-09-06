@@ -1,4 +1,6 @@
 package zoo_management;
+import java.util.*;
+
 
 public class Kraken extends MysticalCreature{
 
@@ -6,8 +8,9 @@ public class Kraken extends MysticalCreature{
     super(name, value, gender, habitat, age);
   }
 
-  public String eat(){
-    return "Rrrraagh. I'll drag you down to the depths of the sea.";
-  }
+  // public String eat(){
+  //   belly.add(Edible food);
+  //   return "Rrrraagh. I'll drag you down to the depths of the sea.";
+  // }
 
 }

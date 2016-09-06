@@ -24,12 +24,12 @@ public class DisgruntledEmployee{
     return enclosureManager.getRampageableCreatures();
   }
 
-// NEED TO TAKE THE RAMPAGER OUT OF IT'S ENCLOSURE SO THAT IT CAN RAMPAGE
   public String makeRampagerRampage(){
     ArrayList<Rampageable> rampagers = getRampageableCreatures();
     Rampageable creature = rampagers.remove(0);
-    Enclosure enclosure = enclosureManager.findMysticalCreature((MysticalCreature)creature);
-    enclosure.removeOccupant((MysticalCreature)creature);
+    MysticalCreature creatureMystical = (MysticalCreature)creature;
+    Enclosure enclosure = enclosureManager.findMysticalCreature(creatureMystical);
+    enclosure.removeOccupant(creatureMystical);
     return creature.rampage();
   }
 

@@ -12,6 +12,7 @@ public class ZooKeeperTest {
   Enclosure enclosure;
   Enclosure enclosure2;
   Chicken chicken2;
+  Kraken kraken;
 
   @Before
   public void before(){
@@ -28,6 +29,7 @@ public class ZooKeeperTest {
     zooKeeper = new ZooKeeper(enclosureManager); 
     zooKeeper.addFood(chicken);
     zooKeeper.addFood(chicken2);
+    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26);
   }
 
   @Test
@@ -41,11 +43,19 @@ public class ZooKeeperTest {
     assertEquals(2, zooKeeper.getFoodCount());
   }
 
+  // @Test
+  // public void canFillAllTroughs(){
+  //   enclosure.addOccupant(kraken);
+  //   zooKeeper.fillAllTroughs(chicken);
+  //   assertEquals(1, enclosure.countFoodInTrough());
+  //   assertEquals(0, enclosure2.countFoodInTrough());
+  // }
+
   @Test
-  public void canFillAllTroughs(){
-    zooKeeper.fillAllTroughs(chicken);
-    assertEquals(1, enclosure.countFoodInTrough());
-    assertEquals(1, enclosure2.countFoodInTrough());
+  public void canFeedAnimals(){
+    enclosure.addOccupant(kraken);
+    zooKeeper.feedAnimals(chicken);
+    assertEquals(1, kraken.getBelly().size());
   }
 
 
