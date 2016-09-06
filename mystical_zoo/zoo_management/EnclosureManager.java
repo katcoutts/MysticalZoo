@@ -2,19 +2,16 @@ package zoo_management;
 import java.util.*;
 import behaviours.*;
 
-public class CreatureManagementUnit {
-
-// want to add in so that you can check for spaces left and check by habitat type so we know if we can accept animals of particular types.
-// maybe we should have some smaller units that look after particular types of animals??
+public class EnclosureManager {
 
 
   private ArrayList<Enclosure> enclosures;
 
-
-  public CreatureManagementUnit(){
+  public EnclosureManager(){
     this.enclosures = new ArrayList<Enclosure>();
   }
 
+// if creature instanceof Rampageable
 
   public int countEnclosures(){
     return enclosures.size();
@@ -35,10 +32,6 @@ public class CreatureManagementUnit {
   public void sortEnclosuresByAvailableSpace(){
     Collections.sort(enclosures, (e1, e2) -> e1.getSpace() - e2.getSpace());
   }
-
-  // public Enclosure selectMostAppropriateEnclosureForNewCreature(){
-  //   ArrayListsortEnclosuresByAvailableSpace();
-  // }
 
 
   public ArrayList<Enclosure> getEnclosuresOfParticularHabitatType(HabitatType habitat){
@@ -62,8 +55,10 @@ public class CreatureManagementUnit {
     return null;
   }
 
-
-
+  public void getCreatureIntoRightEnclosure(MysticalCreature creature){
+    Enclosure enclosure = pickEnclosureForCreature(creature);
+    enclosure.addOccupant(creature);
+  }
 
 
   public int getTotalCapacity(){
@@ -97,6 +92,19 @@ public class CreatureManagementUnit {
       }
     }
     return null;
+  }
+
+  public ArrayList<Rampageable> getRampageableCreatures(){
+    ArrayList<Rampageable> rampageableCreatures = new ArrayList<Rampageable>();
+    for (Enclosure enclosure : enclosures){
+      for (MysticalCreature occupant : enclosure.getOccupants()){
+        if (occupant instanceof Rampageable) {
+          Rampageable rampager = (Rampageable) occupant;
+          rampageableCreatures.add(rampager);
+        }
+      }
+    }
+    return rampageableCreatures;
   }
 
   public void moveMysticalCreature(MysticalCreature mysticalCreature, Enclosure enclosure){

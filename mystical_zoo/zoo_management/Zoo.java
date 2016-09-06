@@ -1,7 +1,29 @@
 package zoo_management;
 import behaviours.*;
+import java.util.*;
 
 public class Zoo {
+
+  EnclosureManager enclosureManager;
+  TicketOffice ticketOffice;
+  String name;
+  int takings;
+
+  public Zoo (String name, EnclosureManager enclosureManager, TicketOffice ticketOffice){
+    this.name = name;
+    this.enclosureManager = enclosureManager;
+    this.ticketOffice = ticketOffice;
+    this.takings = 0;
+  }
+
+  public EnclosureManager getEnclosureManager(){
+    return this.enclosureManager;
+  }
+
+  public TicketOffice getTicketOffice(){
+    return this.ticketOffice;
+  }
+
 
 // The Zoo should have enclosures(or a CreatureManagementUnit which holds these), staff (could be an abstract class above zookeeper and shopstaff and vet and manager who have a weekly salary, have names), a ticket office/shop.
 // the responsibility for feeding animals is abstracted away to zookeepers - perhaps they also have to buy the feed and keep an eye on the stocks.

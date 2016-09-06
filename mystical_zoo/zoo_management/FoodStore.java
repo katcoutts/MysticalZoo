@@ -1,29 +1,29 @@
-package zoo_management;
-import behaviours.*;
-import java.util.*;
+// package zoo_management;
+// import behaviours.*;
+// import java.util.*;
 
-public class FoodStore {
+// public class FoodStore {
 
-  ArrayList<Edible> food;
+//   ArrayList<Edible> food;
 
-  public FoodStore(){
-    this.food = new ArrayList<Edible>();
-  }
+//   public FoodStore(){
+//     this.food = new ArrayList<Edible>();
+//   }
 
-  public ArrayList<Edible> getFood(){
-    return this.food;
-  }
+//   public ArrayList<Edible> getFood(){
+//     return this.food;
+//   }
 
-  public void addFood(Edible item){
-    food.add(item);
-  }
+//   public void addFood(Edible item){
+//     food.add(item);
+//   }
 
-  public int getCount(){
-    return food.size();
-  }
+//   public int getCount(){
+//     return food.size();
+//   }
 
-  public Edible removeFood(){
-    return food.remove(0);
-  }
+//   public Edible removeFood(){
+//     return food.remove(0);
+//   }
 
-}  
+// }  

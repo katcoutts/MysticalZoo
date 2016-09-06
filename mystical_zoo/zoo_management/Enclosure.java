@@ -12,12 +12,11 @@ public class Enclosure {
 
 
   public Enclosure (int capacity, HabitatType habitat){
-    // PROBABLY HERE DON'T NEED TO PASS IN THE SPACE AS THAT'S THE CAPACITY TO START WITH SO JUST SAY THIS.SPACE = CAPACITY.
     this.capacity = capacity;
     this.habitat = habitat;
     this.occupants = new ArrayList<MysticalCreature>();
     this.trough = new ArrayList<Edible>();
-    // MAYBE CHANGE THE ABOVE SO DIFFERENT TYPES OF ENCLOSURES CAN TAKE DIFFERENT TYPES OF ANIMALS BASED ON INTERFACE SO YOU CAN'T PUT A LAND ANIMAL IN A SEA ENCLOSURE.
+    // NEED TO FILL A TROUGH UNTIL IT HAS ONE ITEM FOR EACH ANIMAL IN THE ENCLOSURE?
   }
 
   public int getCapacity(){

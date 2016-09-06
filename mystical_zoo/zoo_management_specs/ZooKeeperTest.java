@@ -6,9 +6,9 @@ import behaviours.*;
 public class ZooKeeperTest {
 
   ZooKeeper zooKeeper;
-  FoodStore foodStore;
+  // FoodStore foodStore;
   Chicken chicken;
-  CreatureManagementUnit cmu;
+  EnclosureManager enclosureManager;
   Enclosure enclosure;
   Enclosure enclosure2;
   Chicken chicken2;
@@ -17,15 +17,28 @@ public class ZooKeeperTest {
   public void before(){
     enclosure = new Enclosure(20, HabitatType.SEA);
     enclosure2 = new Enclosure(4, HabitatType.SEA);
-    foodStore = new FoodStore();
+    // foodStore = new FoodStore();
     chicken = new Chicken();
     chicken2 = new Chicken();
-    foodStore.addFood(chicken);
-    foodStore.addFood(chicken2);
-    cmu = new CreatureManagementUnit();
-    cmu.addEnclosure(enclosure);
-    cmu.addEnclosure(enclosure2);
-    zooKeeper = new ZooKeeper(foodStore, cmu);      
+    // foodStore.addFood(chicken);
+    // foodStore.addFood(chicken2);
+    enclosureManager = new EnclosureManager();
+    enclosureManager.addEnclosure(enclosure);
+    enclosureManager.addEnclosure(enclosure2);
+    zooKeeper = new ZooKeeper(enclosureManager); 
+    zooKeeper.addFood(chicken);
+    zooKeeper.addFood(chicken2);
+  }
+
+  @Test
+  public void canGetEnclosures(){
+    int num = zooKeeper.getEnclosures().size();
+    assertEquals(2, num);
+  }
+
+  @Test
+  public void canGetFoodCount(){
+    assertEquals(2, zooKeeper.getFoodCount());
   }
 
   @Test
