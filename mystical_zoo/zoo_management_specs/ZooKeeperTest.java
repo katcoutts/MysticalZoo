@@ -29,7 +29,7 @@ public class ZooKeeperTest {
     zooKeeper = new ZooKeeper(enclosureManager); 
     zooKeeper.addFood(chicken);
     zooKeeper.addFood(chicken2);
-    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26);
+    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20);
   }
 
   @Test
@@ -55,7 +55,7 @@ public class ZooKeeperTest {
   public void canFeedAnimals(){
     enclosure.addOccupant(kraken);
     zooKeeper.feedAnimals(chicken);
-    assertEquals(1, kraken.getBelly().size());
+    assertEquals(20, kraken.getBelly().size());
   }
 
 

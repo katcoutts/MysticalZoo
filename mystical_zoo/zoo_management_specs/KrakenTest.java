@@ -9,7 +9,7 @@ public class KrakenTest {
   
   @Before 
   public void before(){
-    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26);
+    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20);
     chicken = new Chicken();
   }
 

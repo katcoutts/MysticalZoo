@@ -64,8 +64,10 @@ public class ZooKeeper{
     // }
     for (Enclosure enclosure : getEnclosures()){
       for (MysticalCreature creature : enclosure.getOccupants()){
+        for (int i=0; i<creature.getDailyFoodNeed(); i++){
         creature.eat(item);
-        enclosure.removeFoodFromTrough(item);
+        }
+        // enclosure.removeFoodFromTrough(item);
       }
     }
   }

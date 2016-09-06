@@ -20,7 +20,7 @@ public class DisgruntledEmployeeTest {
     enclosureManager.addEnclosure(enclosure1);
     enclosureManager.addEnclosure(enclosure2);
     disgruntledEmployee = new DisgruntledEmployee("John", enclosureManager); 
-    dragon = new Dragon("Charley", 2500, GenderType.FEMALE, HabitatType.AIR, 22);
+    dragon = new Dragon("Charley", 2500, GenderType.FEMALE, HabitatType.AIR, 22, 5);
     enclosure1.addOccupant(dragon);
   }
 

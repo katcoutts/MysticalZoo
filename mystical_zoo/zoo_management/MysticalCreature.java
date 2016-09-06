@@ -10,20 +10,26 @@ public abstract class MysticalCreature {
   private HabitatType habitat;
   private int age;
   private ArrayList<Edible> belly;
+  private int dailyFoodNeed;
 
   // need to think about the food aspect and bellies. If what they eat varies, maybe the belly shouldn't be defined here.
 
-  public MysticalCreature(String name, int value, GenderType gender, HabitatType habitat, int age){
+  public MysticalCreature(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed){
     this.name = name;
     this.value = value;
     this.gender = gender;
     this.habitat = habitat;
     this.age = age;
     this.belly = new ArrayList<Edible>();
+    this.dailyFoodNeed = dailyFoodNeed;
   }
 
   public String getName(){
     return this.name;
+  }
+
+  public int getDailyFoodNeed(){
+    return this.dailyFoodNeed;
   }
 
   public int getValue(){
