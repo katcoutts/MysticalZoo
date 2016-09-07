@@ -4,35 +4,53 @@ import java.util.*;
 
 public class Zoo {
 
-  EnclosureManager enclosureManager;
+  CreatureUnit creatureUnit;
   TicketOffice ticketOffice;
   String name;
   int takings;
+  ZooKeeper zooKeeper;
+  StockManager stockManager;
+  MarketingManager marketingManager;
 
-  public Zoo (String name, EnclosureManager enclosureManager, TicketOffice ticketOffice){
+  public Zoo (String name, CreatureUnit creatureUnit, TicketOffice ticketOffice, ZooKeeper zooKeeper, StockManager stockManager, MarketingManager marketingManager){
     this.name = name;
-    this.enclosureManager = enclosureManager;
+    this.creatureUnit = creatureUnit;
     this.ticketOffice = ticketOffice;
     this.takings = 0;
+    this.zooKeeper = zooKeeper;
+    this.stockManager = stockManager;
+    this.marketingManager = marketingManager;
   }
 
-  public EnclosureManager getEnclosureManager(){
-    return this.enclosureManager;
+  public String getName(){
+    return this.name;
+  }
+
+  public int getTakings(){
+    return this.takings;
+  }
+
+  public ZooKeeper getZooKeeper(){
+    return this.zooKeeper;
   }
 
   public TicketOffice getTicketOffice(){
     return this.ticketOffice;
   }
 
+  public CreatureUnit getCreatureUnit(){
+    return this.creatureUnit;
+  }
 
-// The Zoo should have enclosures(or a CreatureManagementUnit which holds these), staff (could be an abstract class above zookeeper and shopstaff and vet and manager who have a weekly salary, have names), a ticket office/shop.
-// the responsibility for feeding animals is abstracted away to zookeepers - perhaps they also have to buy the feed and keep an eye on the stocks.
-// responsibility for tickets is with the ticket office
-// responsibility for merchandise is with the shop
-// Zoo - or Zoo Manager maybe? - needs to be able to say what animals the zoo has.
-// has an array list of enclosures
+  public StockManager getStockManager(){
+    return this.stockManager;
+  }
 
-// at the end of the day we set the takings of the ticket office back to 0 - or at the start of a day. And we also reset currentVisitors to zero and ticketsSold to 0. At the end of a day we would probably save the stuff somewhere.
+  public MarketingManager getMarketingManager(){
+    return this.marketingManager;
+  }
+
+
 
 
 }

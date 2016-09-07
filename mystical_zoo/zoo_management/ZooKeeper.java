@@ -2,28 +2,23 @@ package zoo_management;
 import java.util.*;
 import behaviours.*;
 
-public class ZooKeeper{
+public class ZooKeeper extends Staff{
 
   ArrayList<Edible> feed;
-  String name;
-  EnclosureManager enclosureManager;
 
-  public ZooKeeper(EnclosureManager enclosureManager){
-    this.enclosureManager = enclosureManager;
-    this.name = name;
+  public ZooKeeper(String name, CreatureUnit creatureUnit){
+    super(name, creatureUnit);
     this.feed = new ArrayList<Edible>();
   }
 
   public ArrayList<Edible> getFeed(){
-    return this.feed;
+    ArrayList<Edible> clone = new ArrayList<Edible>(this.feed);
+    return clone;
   }
 
-  public EnclosureManager getEnclosureManager(){
-    return this.enclosureManager;
-  }
 
   public ArrayList<Enclosure> getEnclosures(){
-    return enclosureManager.getEnclosures();
+    return creatureUnit.getEnclosures();
   }
 
   public int getFoodCount(){

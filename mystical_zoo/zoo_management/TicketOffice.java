@@ -1,9 +1,6 @@
 package zoo_management;
 import java.util.*;
 
-// maybe change this so you pass in a ticket price to the ticket office. Don't necessarily need to make an actual class of ticket.
-// change the selling ticket so it takes in a number and can sell a number of tickets.
-
 
 public class TicketOffice {
 
@@ -71,14 +68,6 @@ public class TicketOffice {
     }
     return "Zoo is full";
   }
-
-
-  // public void setDaysTicketTotal(int total, Ticket ticket){
-  //   for (int i=1; i<=(total); i++){
-  //     tickets.add(ticket);
-  //   }
-  // }
-  
 
 
 

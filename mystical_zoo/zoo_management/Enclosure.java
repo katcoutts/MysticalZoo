@@ -95,7 +95,8 @@ public class Enclosure {
   }
 
   public void addOccupant(MysticalCreature mysticalCreature){
-    occupants.add(mysticalCreature);
+    if (mysticalCreature.getHabitatType() == enclosure.getHabitatType()){
+     occupants.add(mysticalCreature);}
   }
 
   public MysticalCreature removeOccupant(MysticalCreature mysticalCreature){

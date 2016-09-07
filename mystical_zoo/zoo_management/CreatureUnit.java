@@ -1,24 +1,22 @@
 package zoo_management;
-import java.util.*;
 import behaviours.*;
+import java.util.*;
 
-public class EnclosureManager {
-
+public class CreatureUnit{
 
   private ArrayList<Enclosure> enclosures;
 
-  public EnclosureManager(){
+  public CreatureUnit(){
     this.enclosures = new ArrayList<Enclosure>();
   }
-
-// if creature instanceof Rampageable
 
   public int countEnclosures(){
     return enclosures.size();
   }
 
   public ArrayList<Enclosure> getEnclosures(){
-    return this.enclosures;
+    ArrayList<Enclosure> clone = new ArrayList<Enclosure>(this.enclosures);
+    return clone;
   }
 
   public Enclosure getEnclosure(int index){
@@ -45,20 +43,6 @@ public class EnclosureManager {
     return rightEnclosures;
   }
 
-  public Enclosure pickEnclosureForCreature(MysticalCreature creature){
-    HabitatType habitat = creature.getHabitat();
-    ArrayList<Enclosure> potentialEnclosures = getEnclosuresOfParticularHabitatType(habitat);
-    for (Enclosure enclosure : potentialEnclosures){
-      if (enclosure.getSpace() >= 1) 
-        return enclosure;
-      }
-    return null;
-  }
-
-  public void getCreatureIntoRightEnclosure(MysticalCreature creature){
-    Enclosure enclosure = pickEnclosureForCreature(creature);
-    enclosure.addOccupant(creature);
-  }
 
 
   public int getTotalCapacity(){
@@ -94,26 +78,5 @@ public class EnclosureManager {
     return null;
   }
 
-  public ArrayList<Rampageable> getRampageableCreatures(){
-    ArrayList<Rampageable> rampageableCreatures = new ArrayList<Rampageable>();
-    for (Enclosure enclosure : enclosures){
-      for (MysticalCreature occupant : enclosure.getOccupants()){
-        if (occupant instanceof Rampageable) {
-          Rampageable rampager = (Rampageable) occupant;
-          rampageableCreatures.add(rampager);
-        }
-      }
-    }
-    return rampageableCreatures;
-  }
 
-  public void moveMysticalCreature(MysticalCreature mysticalCreature, Enclosure enclosure){
-    Enclosure currentEnclosure = findMysticalCreature(mysticalCreature);
-    currentEnclosure.removeOccupant(mysticalCreature);
-    enclosure.addOccupant(mysticalCreature);
-  }
-
-
-
-
-} 
+}

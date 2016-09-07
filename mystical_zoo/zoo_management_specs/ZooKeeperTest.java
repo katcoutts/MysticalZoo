@@ -9,12 +9,11 @@ public class ZooKeeperTest {
   ZooKeeper zooKeeper;
   // FoodStore foodStore;
   Chicken chicken;
-  EnclosureManager enclosureManager;
+  CreatureUnit creatureUnit;
   Enclosure enclosure;
   Enclosure enclosure2;
   Chicken chicken2;
   Kraken kraken;
-  ArrayList<MysticalPreyType> mysticalPrey;
 
   @Before
   public void before(){
@@ -25,14 +24,13 @@ public class ZooKeeperTest {
     chicken2 = new Chicken();
     // foodStore.addFood(chicken);
     // foodStore.addFood(chicken2);
-    enclosureManager = new EnclosureManager();
-    enclosureManager.addEnclosure(enclosure);
-    enclosureManager.addEnclosure(enclosure2);
-    zooKeeper = new ZooKeeper(enclosureManager); 
+    creatureUnit = new CreatureUnit();
+    creatureUnit.addEnclosure(enclosure);
+    creatureUnit.addEnclosure(enclosure2);
+    zooKeeper = new ZooKeeper("Hannah", creatureUnit); 
     zooKeeper.addFood(chicken);
     zooKeeper.addFood(chicken2);
-    ArrayList<MysticalPreyType> mysticalPrey = new ArrayList<MysticalPreyType>();
-    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20, mysticalPrey);
+    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20);
   }
 
   @Test
