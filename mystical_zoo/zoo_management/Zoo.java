@@ -38,6 +38,10 @@ public class Zoo {
     return this.ticketOffice;
   }
 
+  public void addTicketOfficeTakingsToOverallTakings(){
+    takings += ticketOffice.getTakings();
+  }
+
   public CreatureUnit getCreatureUnit(){
     return this.creatureUnit;
   }

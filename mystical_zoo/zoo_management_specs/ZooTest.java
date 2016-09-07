@@ -33,6 +33,13 @@ public class ZooTest {
     assertEquals(0, zoo.getTakings());
   }
 
+  @Test
+  public void canAddTicketOfficeMoneyToTakings(){
+    ticketOffice.setTakings(250);
+    zoo.addTicketOfficeTakingsToOverallTakings();
+    assertEquals(250, zoo.getTakings());
+  }
+
 
 }
 
