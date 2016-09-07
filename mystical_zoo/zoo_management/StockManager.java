@@ -41,7 +41,7 @@ public class StockManager extends Staff {
     HabitatType habitat = creature.getHabitat();
     ArrayList<Enclosure> potentialEnclosures = getEnclosuresOfParticularHabitatType(habitat);
     for (Enclosure enclosure : potentialEnclosures){
-      if ((enclosure.getSpace() >= 1) && (enclosure.checkForPredator(creature) == false)){ 
+      if ((enclosure.getSpace() >= 1) && (enclosure.checkForPredatorInEnclosure(creature) == false) && (enclosure.checkIfANewCreatureWillAttackAnOccupant(creature) == false)){ 
         return enclosure;
       }
     }

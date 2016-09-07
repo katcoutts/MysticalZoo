@@ -30,7 +30,7 @@ public class ZooKeeperTest {
     zooKeeper = new ZooKeeper("Hannah", creatureUnit); 
     zooKeeper.addFood(chicken);
     zooKeeper.addFood(chicken2);
-    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20);
+    kraken = new Kraken("Robbie", 3000, GenderType.MALE, 26, 20);
   }
 
   @Test

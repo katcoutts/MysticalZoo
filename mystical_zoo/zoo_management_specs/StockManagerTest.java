@@ -19,8 +19,8 @@ public class StockManagerTest {
   public void before(){
     creatureUnit = new CreatureUnit();
     stockManager = new StockManager("Alan", creatureUnit);
-    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20);
-    dragon = new Dragon("Charley", 2500, GenderType.FEMALE, HabitatType.AIR, 22, 5);
+    kraken = new Kraken("Robbie", 3000, GenderType.MALE, 26, 20);
+    dragon = new Dragon("Charley", 2500, GenderType.FEMALE, 22, 5);
     enclosure = new Enclosure(20, HabitatType.SEA);
     enclosure2 = new Enclosure(42, HabitatType.SEA);
     enclosure3 = new Enclosure(5, HabitatType.LAND);

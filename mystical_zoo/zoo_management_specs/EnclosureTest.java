@@ -11,14 +11,16 @@ public class EnclosureTest{
   Chicken chicken;
   Dragon dragon;
   Dragon dragon2;
+  Flump flump;
   
   @Before 
   public void before(){
     seaEnclosure = new Enclosure(20, HabitatType.SEA);
     seaEnclosure2 = new Enclosure(1, HabitatType.SEA);
     chicken = new Chicken();
-    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20);
-    dragon2 = new Dragon("Charley", 2500, GenderType.FEMALE, HabitatType.AIR, 22, 5);
+    kraken = new Kraken("Robbie", 3000, GenderType.MALE, 26, 20);
+    dragon2 = new Dragon("Charley", 2500, GenderType.FEMALE, 22, 5);
+    flump = new Flump("Aela", 500, GenderType.FEMALE, 22, 5);
   }
 
   @Test
@@ -54,13 +56,22 @@ public class EnclosureTest{
     assertEquals(3, kraken.getMysticalPrey().size());
     // assertEquals("Dragon", kraken.getMysticalPrey().remove(0));
     assertEquals("Dragon", dragon2.getClass().getSimpleName());
-    assertEquals(true, seaEnclosure.checkForPredator(dragon2));
+    assertEquals(true, seaEnclosure.checkForPredatorInEnclosure(dragon2));
     // assertEquals(1, seaEnclosure.getOccupants().remove(0).getMysticalPrey().size());
     // assertEquals("Dragon", dragon2.getClass().getSimpleName());
     // assertEquals("Dragon", seaEnclosure.checkForPredator(dragon2));
     // assertEquals(true, seaEnclosure.checkForPredator(dragon2));
     // assertEquals(false, seaEnclosure2.checkForPredator(dragon));
   }
+
+  @Test
+  public void canCheckIfNewCreatureWouldAttackAnOccupant(){
+    seaEnclosure.addOccupant(flump);
+    assertEquals(1, seaEnclosure.getCount());
+    assertEquals(true, seaEnclosure.checkIfANewCreatureWillAttackAnOccupant(kraken));
+  }
+
+
 
   @Test
   public void canAddAnOccupant(){

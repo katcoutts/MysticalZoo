@@ -4,8 +4,9 @@ import java.util.*;
 
 public class Dragon extends MysticalCreature implements Rampageable{
 
-  public Dragon(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed){
-    super(name, value, gender, habitat, age, dailyFoodNeed);
+  public Dragon(String name, int value, GenderType gender, int age, int dailyFoodNeed){
+    super(name, value, gender, age, dailyFoodNeed);
+    this.habitat = HabitatType.AIR;
   }
 
   public void setUpPreyList(){

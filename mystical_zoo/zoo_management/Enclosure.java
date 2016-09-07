@@ -65,7 +65,7 @@ public class Enclosure {
     return false;
   }
 
-  public boolean checkForPredator(MysticalCreature creature){
+  public boolean checkForPredatorInEnclosure(MysticalCreature creature){
     String creatureClass = creature.getClass().getSimpleName().toUpperCase();
     for (MysticalCreature mysticalCreature : occupants){
       for (MysticalPreyType mysticalPrey : mysticalCreature.getMysticalPrey()){
@@ -77,6 +77,16 @@ public class Enclosure {
     return false;
   }
 
+  public boolean checkIfANewCreatureWillAttackAnOccupant(MysticalCreature creature){
+    for (MysticalPreyType mysticalPrey : creature.getMysticalPrey()){
+      for (MysticalCreature mysticalCreature : occupants){
+        if (mysticalPrey.toString().equals(mysticalCreature.getClass().getSimpleName().toUpperCase())){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 
 
   public int getAvailableSpace(){

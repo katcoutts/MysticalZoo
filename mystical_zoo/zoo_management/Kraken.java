@@ -4,8 +4,9 @@ import java.util.*;
 
 public class Kraken extends MysticalCreature{
 
-  public Kraken(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed){
-    super(name, value, gender, habitat, age, dailyFoodNeed);
+  public Kraken(String name, int value, GenderType gender, int age, int dailyFoodNeed){
+    super(name, value, gender, age, dailyFoodNeed);
+    this.habitat = HabitatType.SEA;
     setUpPreyList();
   }
 
@@ -14,6 +15,7 @@ public class Kraken extends MysticalCreature{
     addMysticalPrey(MysticalPreyType.FLUMP);
     addMysticalPrey(MysticalPreyType.UNICORN);
   }
+
 
   // public String eat(){
   //   belly.add(Edible food);

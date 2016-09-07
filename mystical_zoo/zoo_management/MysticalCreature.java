@@ -7,7 +7,7 @@ public abstract class MysticalCreature {
   private String name;
   private int value;
   private GenderType gender;
-  private HabitatType habitat;
+  protected HabitatType habitat;
   private int age;
   private ArrayList<Edible> belly;
   private int dailyFoodNeed;
@@ -15,11 +15,10 @@ public abstract class MysticalCreature {
 
   // need to think about the food aspect and bellies. If what they eat varies, maybe the belly shouldn't be defined here possibly - but means there's loads of different bellies?
 
-  public MysticalCreature(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed){
+  public MysticalCreature(String name, int value, GenderType gender, int age, int dailyFoodNeed){
     this.name = name;
     this.value = value;
     this.gender = gender;
-    this.habitat = habitat;
     this.age = age;
     this.belly = new ArrayList<Edible>();
     this.dailyFoodNeed = dailyFoodNeed;
@@ -64,6 +63,10 @@ public abstract class MysticalCreature {
 
   public HabitatType getHabitat(){
     return this.habitat;
+  }
+
+  public void setHabitat(HabitatType type){
+    this.habitat = type;
   }
 
   public int getAge(){

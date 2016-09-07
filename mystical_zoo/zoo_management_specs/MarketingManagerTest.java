@@ -21,7 +21,7 @@ public class MarketingManagerTest {
     creatureUnit.addEnclosure(enclosure1);
     creatureUnit.addEnclosure(enclosure2);
     marketingManager = new MarketingManager("John", creatureUnit); 
-    dragon = new Dragon("Charley", 2500, GenderType.FEMALE, HabitatType.AIR, 22, 5);
+    dragon = new Dragon("Charley", 2500, GenderType.FEMALE, 22, 5);
     enclosure1.addOccupant(dragon);
   }
 
