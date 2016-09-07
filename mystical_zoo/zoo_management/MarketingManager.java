@@ -2,12 +2,12 @@ package zoo_management;
 import java.util.*;
 import behaviours.*;
 
-public class DisgruntledEmployee{
+public class MarketingManager{
 
   String name;
   EnclosureManager enclosureManager;
 
-  public DisgruntledEmployee(String name, EnclosureManager enclosureManager){
+  public MarketingManager(String name, EnclosureManager enclosureManager){
     this.name = name;
     this.enclosureManager = enclosureManager;
   }

@@ -11,11 +11,11 @@ public abstract class MysticalCreature {
   private int age;
   private ArrayList<Edible> belly;
   private int dailyFoodNeed;
-  private ArrayList<String> mysticalPrey;
+  private ArrayList<MysticalPreyType> mysticalPrey;
 
   // need to think about the food aspect and bellies. If what they eat varies, maybe the belly shouldn't be defined here.
 
-  public MysticalCreature(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed, ArrayList<String> mysticalPrey){
+  public MysticalCreature(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed, ArrayList<MysticalPreyType> mysticalPrey){
     this.name = name;
     this.value = value;
     this.gender = gender;
@@ -30,12 +30,12 @@ public abstract class MysticalCreature {
     return this.name;
   }
 
-  public ArrayList<String> getMysticalPrey(){
-    ArrayList<String> clone = new ArrayList<String>(this.mysticalPrey);
+  public ArrayList<MysticalPreyType> getMysticalPrey(){
+    ArrayList<MysticalPreyType> clone = new ArrayList<MysticalPreyType>(this.mysticalPrey);
     return this.mysticalPrey;
   }
 
-  public String getMysticalPrey1(){
+  public MysticalPreyType getMysticalPrey1(){
     return getMysticalPrey().remove(0);
   }
 
@@ -43,7 +43,7 @@ public abstract class MysticalCreature {
     return this.dailyFoodNeed;
   }
 
-  public void addMysticalPrey(String name){
+  public void addMysticalPrey(MysticalPreyType name){
     mysticalPrey.add(name);
   }
 

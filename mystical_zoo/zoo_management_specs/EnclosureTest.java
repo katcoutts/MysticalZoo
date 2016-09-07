@@ -11,16 +11,16 @@ public class EnclosureTest{
   Chicken chicken;
   Dragon dragon;
   Dragon dragon2;
-  ArrayList<String> mysticalPrey;
-  ArrayList<String> mysticalPrey2;
+  ArrayList<MysticalPreyType> mysticalPrey;
+  ArrayList<MysticalPreyType> mysticalPrey2;
   
   @Before 
   public void before(){
     seaEnclosure = new Enclosure(20, HabitatType.SEA);
     seaEnclosure2 = new Enclosure(1, HabitatType.SEA);
     chicken = new Chicken();
-    ArrayList<String> mysticalPrey = new ArrayList<String>();
-    mysticalPrey.add("Dragon");
+    ArrayList<MysticalPreyType> mysticalPrey = new ArrayList<MysticalPreyType>();
+    mysticalPrey.add(MysticalPreyType.DRAGON);
     kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20, mysticalPrey);
     dragon2 = new Dragon("Charley", 2500, GenderType.FEMALE, HabitatType.AIR, 22, 5, mysticalPrey);
   }

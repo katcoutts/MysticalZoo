@@ -7,13 +7,13 @@ public class KrakenTest {
 
   Kraken kraken;
   Chicken chicken;
-  ArrayList<String> mysticalPrey;
+  ArrayList<MysticalPreyType> mysticalPrey;
   Dragon dragon;
   
   @Before 
   public void before(){
-    ArrayList<String> mysticalPrey = new ArrayList<String>();
-    mysticalPrey.add("Dragon");
+    ArrayList<MysticalPreyType> mysticalPrey = new ArrayList<MysticalPreyType>();
+    mysticalPrey.add(MysticalPreyType.DRAGON);
     kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20, mysticalPrey);
     chicken = new Chicken();
   }
@@ -30,7 +30,7 @@ public class KrakenTest {
 
   @Test
   public void getNameOfKrakensPrey(){
-    assertEquals("Dragon", kraken.getMysticalPrey1());
+    assertEquals("DRAGON", kraken.getMysticalPrey1().toString());
   }
 
   // @Test

@@ -67,10 +67,10 @@ public class Enclosure {
   }
 
   public boolean checkForPredator(MysticalCreature creature){
-    String creatureClass = creature.getClass().getSimpleName();
+    String creatureClass = creature.getClass().getSimpleName().toUpperCase();
     for (MysticalCreature mysticalCreature : occupants){
-      for (String mysticalPrey : mysticalCreature.getMysticalPrey()){
-        if (mysticalPrey.equals(creatureClass)){
+      for (MysticalPreyType mysticalPrey : mysticalCreature.getMysticalPrey()){
+        if (mysticalPrey.toString().equals(creatureClass)){
           return true;
         }
       }

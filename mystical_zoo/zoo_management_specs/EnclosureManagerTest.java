@@ -12,14 +12,14 @@ public class EnclosureManagerTest {
   Kraken kraken;
   Dragon dragon;
   Enclosure enclosure4;
-  ArrayList<String> mysticalPrey;
-  ArrayList<String> mysticalPrey2;
+  ArrayList<MysticalPreyType> mysticalPrey;
+  ArrayList<MysticalPreyType> mysticalPrey2;
 
   @Before
   public void before(){
-    ArrayList<String> mysticalPrey  = new ArrayList<String>();
-    mysticalPrey.add("Dragon");
-    ArrayList<String> mysticalPrey2  = new ArrayList<String>();
+    ArrayList<MysticalPreyType> mysticalPrey  = new ArrayList<MysticalPreyType>();
+    mysticalPrey.add(MysticalPreyType.DRAGON);
+    ArrayList<MysticalPreyType> mysticalPrey2  = new ArrayList<MysticalPreyType>();
     enclosureManager = new EnclosureManager();
     kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20, mysticalPrey2);
     dragon = new Dragon("Charley", 2500, GenderType.FEMALE, HabitatType.AIR, 22, 5, mysticalPrey);

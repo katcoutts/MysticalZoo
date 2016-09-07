@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Kraken extends MysticalCreature{
 
-  public Kraken(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed, ArrayList<String> mysticalPrey){
+  public Kraken(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed, ArrayList<MysticalPreyType> mysticalPrey){
     super(name, value, gender, habitat, age, dailyFoodNeed, mysticalPrey);
   }
 
