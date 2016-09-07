@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Dragon extends MysticalCreature implements Rampageable{
 
-  public Dragon(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed){
-    super(name, value, gender, habitat, age, dailyFoodNeed);
+  public Dragon(String name, int value, GenderType gender, HabitatType habitat, int age, int dailyFoodNeed, ArrayList<String> mysticalPrey){
+    super(name, value, gender, habitat, age, dailyFoodNeed, mysticalPrey);
   }
 
   // public String eat(Edible food){

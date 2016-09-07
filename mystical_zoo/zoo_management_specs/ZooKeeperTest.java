@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import zoo_management.*;
 import behaviours.*;
+import java.util.*;
 
 public class ZooKeeperTest {
 
@@ -13,6 +14,7 @@ public class ZooKeeperTest {
   Enclosure enclosure2;
   Chicken chicken2;
   Kraken kraken;
+  ArrayList<String> mysticalPrey;
 
   @Before
   public void before(){
@@ -29,7 +31,8 @@ public class ZooKeeperTest {
     zooKeeper = new ZooKeeper(enclosureManager); 
     zooKeeper.addFood(chicken);
     zooKeeper.addFood(chicken2);
-    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20);
+    ArrayList<String> mysticalPrey = new ArrayList<String>();
+    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20, mysticalPrey);
   }
 
   @Test

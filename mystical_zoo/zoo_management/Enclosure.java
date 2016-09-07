@@ -66,6 +66,29 @@ public class Enclosure {
     return false;
   }
 
+  public boolean checkForPredator(MysticalCreature creature){
+    String creatureClass = creature.getClass().getSimpleName();
+    for (MysticalCreature mysticalCreature : occupants){
+      for (String mysticalPrey : mysticalCreature.getMysticalPrey()){
+        if (mysticalPrey.equals(creatureClass)){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+
+
+  // public boolean checkForPredator(MysticalCreature creature){
+  //   for (MysticalCreature mysticalCreature : occupants){
+  //     if (mysticalCreature.getMysticalPrey1() == creature.getClass().getSimpleName()){
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // }
+
   // public int getAvailableSpace(){
   //   int space = (getCapacity() - getCount());
   //   return space;

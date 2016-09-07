@@ -48,6 +48,9 @@ public class ZooKeeper{
   // public void callAnimalsToEat(Edible item){
   //   for (Enclosure enclosure : getEnclosures()){
   //     for (MysticalCreature creature : enclosure.getOccupants()){
+            // for (int i=0; i<creature.getDailyFoodNeed(); i++){
+            // creature.eat(item);
+            // }
   //       creature.eat(item);
   //     }
   //   }

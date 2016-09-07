@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 import org.junit.*;
 import zoo_management.*;
+import java.util.*;
 
 public class EnclosureManagerTest {
 
@@ -11,12 +12,17 @@ public class EnclosureManagerTest {
   Kraken kraken;
   Dragon dragon;
   Enclosure enclosure4;
+  ArrayList<String> mysticalPrey;
+  ArrayList<String> mysticalPrey2;
 
   @Before
   public void before(){
+    ArrayList<String> mysticalPrey  = new ArrayList<String>();
+    mysticalPrey.add("Dragon");
+    ArrayList<String> mysticalPrey2  = new ArrayList<String>();
     enclosureManager = new EnclosureManager();
-    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20);
-    dragon = new Dragon("Charley", 2500, GenderType.FEMALE, HabitatType.AIR, 22, 5);
+    kraken = new Kraken("Robbie", 3000, GenderType.MALE, HabitatType.SEA, 26, 20, mysticalPrey2);
+    dragon = new Dragon("Charley", 2500, GenderType.FEMALE, HabitatType.AIR, 22, 5, mysticalPrey);
     enclosure = new Enclosure(20, HabitatType.SEA);
     enclosure2 = new Enclosure(42, HabitatType.SEA);
     enclosure3 = new Enclosure(5, HabitatType.LAND);
