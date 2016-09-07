@@ -20,6 +20,11 @@ public class StockManager extends Staff {
     return creatureUnit.countEnclosures();
   }
 
+  public void moveMysticalCreature(MysticalCreature mysticalCreature, Enclosure enclosure){
+    Enclosure currentEnclosure = findMysticalCreature(mysticalCreature);
+    currentEnclosure.removeOccupant(mysticalCreature);
+    enclosure.addOccupant(mysticalCreature);
+  }
 
   public ArrayList<Enclosure> getEnclosuresOfParticularHabitatType(HabitatType habitat){
     creatureUnit.sortEnclosuresByAvailableSpace();
@@ -44,8 +49,8 @@ public class StockManager extends Staff {
   }
 
   public void getCreatureIntoRightEnclosure(MysticalCreature creature){
-    Enclosure enclosure = pickEnclosureForCreature(creature);
-    enclosure.addOccupant(creature);
+    Enclosure bestEnclosure = pickEnclosureForCreature(creature);
+    bestEnclosure.addOccupant(creature);
   }
 
 
@@ -95,11 +100,7 @@ public class StockManager extends Staff {
     return rampageableCreatures;
   }
 
-  public void moveMysticalCreature(MysticalCreature mysticalCreature, Enclosure enclosure){
-    Enclosure currentEnclosure = findMysticalCreature(mysticalCreature);
-    currentEnclosure.removeOccupant(mysticalCreature);
-    enclosure.addOccupant(mysticalCreature);
-  }
+ 
 
 
 }

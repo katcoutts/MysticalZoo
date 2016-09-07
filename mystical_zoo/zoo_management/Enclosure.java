@@ -16,7 +16,6 @@ public class Enclosure {
     this.habitat = habitat;
     this.occupants = new ArrayList<MysticalCreature>();
     this.trough = new ArrayList<Edible>();
-    // NEED TO FILL A TROUGH UNTIL IT HAS ONE ITEM FOR EACH ANIMAL IN THE ENCLOSURE?
   }
 
   public int getCapacity(){
@@ -95,7 +94,7 @@ public class Enclosure {
   }
 
   public void addOccupant(MysticalCreature mysticalCreature){
-    if (mysticalCreature.getHabitatType() == enclosure.getHabitatType()){
+    if (mysticalCreature.getHabitat() == getHabitatType()){
      occupants.add(mysticalCreature);}
   }
 
