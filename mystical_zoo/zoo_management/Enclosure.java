@@ -80,19 +80,10 @@ public class Enclosure {
 
 
 
-  // public boolean checkForPredator(MysticalCreature creature){
-  //   for (MysticalCreature mysticalCreature : occupants){
-  //     if (mysticalCreature.getMysticalPrey1() == creature.getClass().getSimpleName()){
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // }
-
-  // public int getAvailableSpace(){
-  //   int space = (getCapacity() - getCount());
-  //   return space;
-  // }
+  public int getAvailableSpace(){
+    int space = (getCapacity() - getCount());
+    return space;
+  }
 
   public boolean checkIfSpace(){
     if (getCount() >= getCapacity()){
