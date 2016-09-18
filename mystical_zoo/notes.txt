@@ -15,23 +15,5 @@ You have been asked to create a zoo management app so that we can manage our dra
 
 
 
-Feeding:
-perhaps have a zookeeper for each enclosure who can feed the animals.
-Need to have a belly for animals.
-Or have a diary which keeps track of when animals are fed??
-Zookeeper should have a diary that keeps track of stuff in their enclosure.
-Do we need to give each class of animal a list of food it eats?
 
-
-Predators:
-Do we give each creature a list of its predators. Or each creature a list of its prey?
-Maybe prey and then if two animals don't have any prey they'll be fine together???
-
-Tickets:
-Do we actually need tickets or just a capacity?
-Ticket office needs to keep track of tickets sold for income.
-Also needs to keep track of how many visitors are in the zoo.
-
-Adding to an enclosure:
-The CMU should work out which enclosure to put it in (refer back to karaoke homework for idea) and the relevant enclosure should then add the creature to it?
 

@@ -13,7 +13,6 @@ public abstract class MysticalCreature {
   private int dailyFoodNeed;
   private ArrayList<MysticalPreyType> mysticalPrey;
 
-  // need to think about the food aspect and bellies. If what they eat varies, maybe the belly shouldn't be defined here possibly - but means there's loads of different bellies?
 
   public MysticalCreature(String name, int value, GenderType gender, int age, int dailyFoodNeed){
     this.name = name;

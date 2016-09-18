@@ -13,11 +13,6 @@ public class Dragon extends MysticalCreature implements Rampageable{
     addMysticalPrey(MysticalPreyType.FLUMP);
   }
 
-  // public String eat(Edible food){
-  //   belly.add(food);
-  //   return "Breathe fire. Chomp, chomp.";
-  // }
-
   public String rampage(){
     return "Aaaargh. I'm rampaging. I'll burn you all.";
   }

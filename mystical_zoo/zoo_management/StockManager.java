@@ -12,9 +12,6 @@ public class StockManager extends Staff {
     creatureUnit.addEnclosure(enclosure);
   }
 
-  public void sortEnclosuresByAvailableSpace(){
-    Collections.sort(getEnclosures(), (e1, e2) -> e1.getSpace() - e2.getSpace());
-  }
 
   public int countEnclosures(){
     return creatureUnit.countEnclosures();
@@ -24,6 +21,10 @@ public class StockManager extends Staff {
     Enclosure currentEnclosure = findMysticalCreature(mysticalCreature);
     currentEnclosure.removeOccupant(mysticalCreature);
     enclosure.addOccupant(mysticalCreature);
+  }
+
+  public void sortEnclosuresByAvailableSpace(){
+    Collections.sort(getEnclosures(), (e1, e2) -> e1.getSpace() - e2.getSpace());
   }
 
   public ArrayList<Enclosure> getEnclosuresOfParticularHabitatType(HabitatType habitat){

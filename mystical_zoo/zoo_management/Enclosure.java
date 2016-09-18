@@ -22,6 +22,29 @@ public class Enclosure {
     return this.capacity;
   }
 
+  public ArrayList<MysticalCreature> getOccupants(){
+    ArrayList<MysticalCreature> clone = new ArrayList<MysticalCreature>(this.mysticalCreature);
+    return clone;
+  }
+
+  public ArrayList<Edible> getTrough(){
+    ArrayList<Edible> clone = new ArrayList<Edible>(this.trough);
+    return clone;
+  }
+
+  public void setCapacity(int newCapacity){
+    this.capacity = newCapacity;
+  }
+
+  public void setHabitat(HabitatType newHabitat){
+    this.habitat = newHabitat;
+  }
+
+
+  public int countFoodInTrough(){
+    return trough.size();  
+  }
+
   public int getSpace(){
     return (getCapacity() - getCount());
   }
@@ -29,16 +52,6 @@ public class Enclosure {
   public int getCount(){
     return occupants.size();
   }
-
-  public ArrayList<Edible> getTrough(){
-    return this.trough;
-  }
-
-  public int countFoodInTrough(){
-    return trough.size();  
-  }
-
-
 
   public void addFoodToTrough(Edible item){
     trough.add(item);
@@ -52,9 +65,7 @@ public class Enclosure {
     return this.habitat;
   }
 
-  public ArrayList<MysticalCreature> getOccupants(){
-    return this.occupants;
-  }
+  
 
   public boolean checkForOccupant(MysticalCreature creature){
     for (MysticalCreature mysticalCreature : occupants){
@@ -75,6 +86,19 @@ public class Enclosure {
       }
     }
     return false;
+  }
+
+
+
+  public void addOccupant(MysticalCreature mysticalCreature){
+    if (mysticalCreature.getHabitat() == getHabitatType()){
+     occupants.add(mysticalCreature);}
+  }
+
+  public MysticalCreature removeOccupant(MysticalCreature mysticalCreature){
+    int index = occupants.indexOf(mysticalCreature);
+    MysticalCreature creature = occupants.remove(index);
+    return creature;
   }
 
   public boolean checkIfANewCreatureWillAttackAnOccupant(MysticalCreature creature){
@@ -101,21 +125,12 @@ public class Enclosure {
     else{
       return true;
     }
-  }
-
-  public void addOccupant(MysticalCreature mysticalCreature){
-    if (mysticalCreature.getHabitat() == getHabitatType()){
-     occupants.add(mysticalCreature);}
-  }
-
-  public MysticalCreature removeOccupant(MysticalCreature mysticalCreature){
-    int index = occupants.indexOf(mysticalCreature);
-    MysticalCreature creature = occupants.remove(index);
-    return creature;
-  }
-
-
-
-  
+}
 
 }
+
+
+
+
+
+
